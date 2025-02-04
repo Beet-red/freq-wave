@@ -1,0 +1,254 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{   
+    font-family: "Poppins", sans-serif; 
+    @apply bg-black;
+}
+.auth-input{
+    @apply w-full p-3 bg-gray-800 rounded-md border border-gray-700 focus:outline-none focus:border-gray-500;  
+}
+.auth-button{
+    @apply w-full bg-green-600 hover:bg-green-500 text-black font-semibold p-3 rounded-full
+}
+
+*::-webkit-scrollbar{
+    height: .3rem;
+    width: 0.1rem;
+}
+
+*::-webkit-scrollbar-track{
+    background-color: transparent;
+}
+
+*::-webkit-scrollbar-thumb{
+    background-color:#2e2d2b ;
+} 
+
+.spotify-progress-bar {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    background-color: transparent;
+    height: 4px;
+    outline: none;
+  }
+  
+  /* Progress bar total color */
+  .spotify-progress-bar::-webkit-slider-runnable-track {
+    background-color: #d3d3d3; 
+    height: 4px;
+    border-radius: 2px;
+    position: relative;
+  }
+  
+  /* for dividing part by part like gray for past and white for further*/
+  .spotify-progress-bar::-webkit-slider-runnable-track {
+    background: linear-gradient(
+      to right,
+      #5c5757 0%, /* white filled part */
+      #5c5757 calc(var(--value, 0) * 1%), /* Calculate the past length */
+      #d3d3d3 calc(var(--value, 0) * 1%), /* White further part */
+      #d3d3d3 100%
+    );
+  }
+  
+  /* Slider Point */
+  .spotify-progress-bar::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 12px;
+    height: 12px;
+    background-color: #5c5757; /* dot color */
+    border-radius: 50%;
+    cursor: pointer;
+    margin-top: -4px;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+  }
+  
+  .spotify-progress-bar::-moz-range-thumb {
+    width: 12px;
+    height: 12px;
+    background-color: #333333; /* Dark thumb */
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+  }
+  
+  .spotify-progress-bar:focus {
+    outline: none;
+  }
+
+  .volume-bar {
+    display: flex;
+    align-items: center;
+    margin-right: 1.25rem; /* mr-5 equivalent */
+}
+
+/* Volume Slider */
+.volume-slider {
+    width: 8rem; /* Default width, increase if needed */
+    height: 4px;
+    appearance: none;
+    background: #d3d3d3;
+    border-radius: 5px;
+    outline: none;
+    margin-left: 0.5rem;
+    /* transition: background-size 0.2s ease; */
+    background-image: linear-gradient(to right, #5c5757, #5c5757); 
+    /* Spotify green fill */
+    background-size: 0% 100%;
+    background-repeat: no-repeat;
+}
+
+/* Slider Thumb */
+.volume-slider::-webkit-slider-thumb {
+    appearance: none;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #5c5757;
+    cursor: pointer;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+    transition: background-color 0.2s;
+}
+
+.volume-slider::-moz-range-thumb {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #fff;
+    cursor: pointer;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+    transition: background-color 0.2s;
+}
+
+/* Hover effect on slider thumb */
+.volume-slider:hover::-webkit-slider-thumb {
+    background-color: #5c5757;
+}
+
+.volume-slider:hover::-moz-range-thumb {
+    background-color: #5c5757;
+}
+
+  /* Style for the Previous and Next button */
+.control-button {
+    color: #ffffff; 
+    font-size: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.2s ease;
+  }
+  
+  .control-button:hover {
+    color: #bbbbbb; /* Light grey when hovered */
+  }
+  
+  /* Style for the Play/Pause button */
+  .play-pause-button {
+    background-color: #ffffff; 
+    color: #000000; 
+    border-radius: 50%; 
+    padding: 10px; 
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    cursor: pointer;
+    border: none;
+  }
+  
+  .play-pause-button:hover {
+    background-color: #f0f0f0; 
+  }
+  
+  .play-pause-button:active {
+    transform: scale(0.95);
+  }
+
+  .time-display {
+    color: #ffffff;
+    font-size: 12px;
+  }
+  
+  .progress-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .player-container {
+    position: fixed;
+    height: 80px;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100; /* Ensure it stays on top of other elements */
+    background-color: #000; /* Match the theme */
+}
+
+.search-container {
+  text-align: center;
+  margin: 20px auto;
+  width: 50%;
+  position: relative;
+}
+
+.search-input {
+  color: black;
+  width: 100%;
+  padding: 10px 15px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.search-input:focus {
+  border: 1px solid #666;
+}
+
+.results-container {
+  max-height: 200px;
+  overflow-y: auto;
+  margin-top: 5px;
+  background-color: #222;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.result-item {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.result-item:hover {
+  background-color: #444;
+}
+
+.thumbnail {
+  width: 40px;
+  height: 40px;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+.result-item span {
+  font-size: 16px;
+  color: #fff;
+}
+  
+  
+  
+  
