@@ -310,7 +310,7 @@ const Player = () => {
           };
 
     return (
-      <div className="player-container" >
+      <div className="player-container " >
       {song ? ( // Check if song is defined
           <div className=' bg-black flex justify-between items-center text-white px-4'>
               <div className="flex items-center gap-4">

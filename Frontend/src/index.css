@@ -195,6 +195,30 @@ body{
     background-color: #000; /* Match the theme */
 }
 
+@media (max-width: 768px) {
+  .player {
+    flex-direction: column;
+    align-items: center;
+  }
+  .song-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .controls {
+    margin-bottom: 20px;
+  }
+  .progress-bar-container {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .volume-bar {
+    display: none;
+  }
+}
+
+
 .search-container {
   text-align: center;
   margin: 20px auto;
