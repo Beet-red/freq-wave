@@ -22,10 +22,10 @@ app.use(cookieParser())
 const port = process.env.PORT;
 
 import UserRoutes from "./routes/UserRoutes.js";
-import SongRoutes from "./routes/songRoutes.js"
+import songRoutes from "./routes/songRoutes.js"
 
 app.use("/api/user", UserRoutes);
-app.use("/api/song", SongRoutes);
+app.use("/api/song", songRoutes);
 
 
 const __dirname = path.resolve()

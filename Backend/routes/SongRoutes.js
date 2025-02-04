@@ -1,7 +1,7 @@
 import express from 'express';
 import { isAuth } from '../checkpoints/isAuth.js';
 import uploadFile from '../checkpoints/multer.js';
-import { addsong, addThumbnail, createnewAlbum, deleteSong, getAllAlbum, getAllSongs, getAllSongsByAlbum, getSingleSong, getNextSong, getRecommendations, getPlaylistSongs } from '../controllers/songControl.js';
+import { addsong, addThumbnail, createnewAlbum, deleteSong, getAllAlbum, getAllSongs, getAllSongsByAlbum, getSingleSong, getNextSong, getRecommendations, getPlaylistSongs } from '../controllers/songRoutes.js';
 
 
 const router = express.Router();
